@@ -2,6 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import authRoute from "./routes/auth.js"
+import roomRoute from "./routes/rooms.js"
 
 
 
@@ -17,8 +18,8 @@ try {
     throw error;
   }
 }
-
-app.use("/api/auth", authRoute)
+app.use(express.json())
+app.use("/api/rooms", roomRoute)
 
 app.listen(8000, ()=> {
     connect()

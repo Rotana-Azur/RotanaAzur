@@ -10,6 +10,10 @@ const roomSchema = new Schema({
     type: String,
     required: true
   },
+  price:{
+    type:Number,
+    required:true
+  },
   number:{
     type: Number,
     required: true
@@ -25,3 +29,5 @@ const roomSchema = new Schema({
 
 
 });
+
+export default mongoose.model("Room",roomSchema)
