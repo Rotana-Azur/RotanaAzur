@@ -2,11 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import authRoute from "./routes/auth.js"
-
-
-
 const app = express()
-
 dotenv.config()
 
 const connect = async ()=> {
@@ -18,8 +14,9 @@ try {
   }
 }
 
-app.use("/api/auth", authRoute)
-
+app.use("/auth", authRoute);
+app.use("/users",usersRoute);
+app.use("/hotels",hotelsRoute);
 app.listen(8000, ()=> {
     connect()
     console.log("Connected to backend.")
