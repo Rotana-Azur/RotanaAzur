@@ -11,5 +11,7 @@ router.get("/signup", (req, res)=>{
     res.send("Signup")
 })
 
+router.post("/register",register )
+router.post("/login",login )
 
 export default router
