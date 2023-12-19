@@ -3,11 +3,8 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import authRoute from "./routes/auth.js"
 import roomRoute from "./routes/rooms.js"
-
-
-
+import userRoute from "./routes/users.js"
 const app = express()
-
 dotenv.config()
 
 const connect = async ()=> {
@@ -19,7 +16,9 @@ try {
   }
 }
 app.use(express.json())
+app.use("/api/auth",authRoute)
 app.use("/api/rooms", roomRoute)
+app.use("/api/users",userRoute)
 
 app.listen(8000, ()=> {
     connect()
