@@ -1,19 +1,17 @@
 import express from "express"
 import Room from "../models/Room.js"
+import { createRoom, deleteRoom, getRoom, getRooms, updateRoom } from "../controllers/roomController.js"
 
 
 const router = express.Router()
-router.post("/", async (req,res)=>{
+router.post("/", createRoom)
+router.put("/:id", updateRoom)
 
-    const newRoom= new Room(req.body)
-    try{ 
-       const savedRoom= await newRoom.save()
-       res.status(200).json(savedRoom)
-    }catch(err){
-        res.status(500).json(err)
+router.delete("/:id", deleteRoom)
 
-    }
-})
+
+router.get("/:id", getRoom)
+router.get("/", getRooms)
 
 
 export default router
