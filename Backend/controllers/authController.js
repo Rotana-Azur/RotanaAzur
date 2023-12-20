@@ -5,10 +5,11 @@ export const register = async (req, res, next) => {
  try {
     
     const password = req.body.password;
-  
+    const isAdmin = req.body.isAdmin;
     const newUser = new User({
       ...req.body,
       password: password,
+      isAdmin : isAdmin
     });
   
     await newUser.save();

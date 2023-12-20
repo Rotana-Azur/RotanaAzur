@@ -1,6 +1,6 @@
 import express from "express"
 import User from "../models/User.js"
-
+import { deleteUser } from "../controllers/userController.js"
 
 const router = express.Router()
 router.post("/", async (req,res)=>{
@@ -14,6 +14,8 @@ router.post("/", async (req,res)=>{
 
     }
 })
+
+router.delete("/:id",deleteUser);
 
 
 export default router
