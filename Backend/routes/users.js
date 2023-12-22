@@ -1,19 +1,20 @@
 import express from "express"
-import User from "../models/User.js"
-
-
+import {updateUser,deleteUser,getUser,getUsers, } from "../controllers/userController.js"
+import { verifyAdmin, verifyToken, verifyUser } from "../utils/verifyToken.js"
 const router = express.Router()
-router.post("/", async (req,res)=>{
 
-    const newUser= new User(req.body)
-    try{ 
-       const savedUser= await newUser.save()
-       res.status(200).json(savedRoom)
-    }catch(err){
-        res.status(500).json(err)
 
-    }
-})
+router.put("/:id",verifyUser,updateUser);
+
+
+router.delete("/:id",verifyUser,deleteUser);
+
+
+router.get("/:id",verifyUser,getUser);
+
+
+router.get("/",verifyAdmin,getUsers);
+
 
 
 export default router
