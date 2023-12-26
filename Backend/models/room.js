@@ -25,9 +25,12 @@ const roomSchema = new Schema({
   capacity:{
     type: Number,
     required: true
+  },
+  imageUrl: {
+    type: String,
   }
-
-
 });
+
+
 
 export default mongoose.model("Room",roomSchema)

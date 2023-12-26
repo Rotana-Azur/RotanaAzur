@@ -2,23 +2,19 @@ import User from "../models/User.js";
 import jwt from 'jsonwebtoken';
 
 export const register = async (req, res, next) => {
- try {
-    
-    const password = req.body.password;
-    const isAdmin = req.body.isAdmin;
     const newUser = new User({
-      ...req.body,
+      username: username,
+      email: email,
       password: password,
       isAdmin : isAdmin
     });
-  
+
     await newUser.save();
     res.status(200).send("User has been created.");
- } catch (err) {
+  } catch (err) {
     next(err);
- }
+  }
 };
-
 
 
 export const login = async (req, res, next) => {
