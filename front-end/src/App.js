@@ -1,6 +1,7 @@
 import React from 'react';
 import RoomList from './Components/allRooms';
 import Login from './Components/login';
+import SignUp from './Components/signUP';
 const App = () => {
   return (
     <div>

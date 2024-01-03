@@ -2,24 +2,22 @@ import User from "../models/User.js";
 import jwt from 'jsonwebtoken';
 
 export const register = async (req, res, next) => {
+  try{
     const newUser = new User({
-      username: username,
-      email: email,
-      password: password,
-      isAdmin : isAdmin
+      ...req.body
     });
 
-    await newUser.save();
-    res.status(200).send("User has been created.");
+    await newUser.save()
+    res.status(200).send("User has been created.")
   } catch (err) {
-    next(err);
+    next(err)
   }
 };
 
 
 export const login = async (req, res, next) => {
  try {
-    const user = await User.findOne({ username: req.body.username });
+    const user = await User.findOne({ email: req.body.email});
     if (!user) return next(createError(404, "User not found!"));
 
     
