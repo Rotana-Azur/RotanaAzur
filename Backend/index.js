@@ -5,7 +5,10 @@ import authRoute from "./routes/auth.js"
 import roomRoute from "./routes/rooms.js"
 import userRoute from "./routes/users.js"
 import cookieParser from "cookie-parser"
+import contactRoute from "./routes/contact.js"
 import cors from 'cors';
+
+
 
 
 const app = express()
@@ -25,7 +28,7 @@ app.use(cookieParser())
 app.use("/api/auth",authRoute)
 app.use("/api/rooms", roomRoute)
 app.use("/api/users",userRoute)
-
+app.use("/api/contacts", contactRoute);
 app.listen(8000, ()=> {
     connect()
     console.log("Connected to backend.")
