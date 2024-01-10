@@ -12,8 +12,9 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from 'react-router-dom'
 
-const pages = ['Our rooms', 'About us', 'Restaurant', 'Contact'];
+const pages = ['Our rooms', 'About us', 'Restaurant', 'Contact','Login'];
 
 
 function Header() {
@@ -29,10 +30,11 @@ function Header() {
     setAnchorElNav(null);
   };
 
-
+  
 
   return (
     <AppBar position="static">
+      
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -109,17 +111,27 @@ function Header() {
           >
             LOGO
           </Typography>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+           
             {pages.map((page) => (
+             
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                // component={Link}
+                // to={`/${page.toLowerCase()}`}
               >
                 {page}
+               
               </Button>
+              
+           
+
             ))}
           </Box>
+          
 
   
         </Toolbar>
