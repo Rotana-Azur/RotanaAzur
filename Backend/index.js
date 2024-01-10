@@ -24,11 +24,11 @@ try {
 }
 app.use(cors());
 app.use(express.json())
-app.use(cookieParser())
 app.use("/api/auth",authRoute)
 app.use("/api/rooms", roomRoute)
 app.use("/api/users",userRoute)
 app.use("/api/contacts", contactRoute);
+app.use(cookieParser())
 app.listen(8000, ()=> {
     connect()
     console.log("Connected to backend.")
