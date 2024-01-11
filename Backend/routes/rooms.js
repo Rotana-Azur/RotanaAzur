@@ -1,12 +1,10 @@
 import express from "express"
 
 import { createRoom, deleteRoom, getRoom, getRooms, updateRoom } from "../controllers/roomController.js"
-import { verifyAdmin } from "../utils/verifyToken.js"
 const router = express.Router()
-router.post("/",verifyAdmin, createRoom)
-router.put("/:id",verifyAdmin, updateRoom)
-
-router.delete("/:id",verifyAdmin, deleteRoom)
+router.post("/",createRoom)
+router.put("/:id", updateRoom)
+router.delete("/:id", deleteRoom)
 
 
 router.get("/:id", getRoom)
