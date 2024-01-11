@@ -22,7 +22,7 @@ export const updateRoom = async (req, res, next) => {
 export const deleteRoom = async (req, res, next) => {
   try{ 
     await Room.findByIdAndDelete(req.params.id)
-         res.status(200).json(deletedRoom)
+         res.status(200).json("deletedRoom")
       }catch(err){
      next(err)
 
