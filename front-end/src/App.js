@@ -5,6 +5,7 @@ import Navbar from './Components/NavBar.jsx';
 import HomePage from './Components/HomePage.jsx';
 const App = () => {
   return (
+    
     <div>
       <Navbar/>
       <HomePage />
