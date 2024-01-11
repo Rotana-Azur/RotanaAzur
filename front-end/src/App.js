@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from './Components/footer';
-import Aboutus from './Components/aboutus';
-import Navbar from './Components/NavBar.jsx';
 import HomePage from './Components/HomePage.jsx';
+import Navbar from './Components/NavBar.jsx';
+
 const App = () => {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
     
     <div>
-      <Navbar/>
-      <HomePage />
+      <Navbar onPageChange={handlePageChange} />
 
-      <Footer/>
+      {currentPage === 'home' && <HomePage />}
+      
+      <Footer />
     </div>
   );
 };

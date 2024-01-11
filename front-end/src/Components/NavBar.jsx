@@ -16,7 +16,7 @@ import AboutUs from './aboutus';
 import Restaurant from './Restaurant';
 import Contact from './contact';
 
-const pages = ['Our rooms', 'About us', 'Restaurant', 'Contact', ];
+const pages = ['Home', 'Our rooms', 'About us', 'Restaurant', 'Contact'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -83,7 +83,7 @@ function Navbar() {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Link to={`/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Link to={`/${page.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                       <Typography textAlign="center">{page}</Typography>
                     </Link>
                   </MenuItem>
@@ -109,21 +109,21 @@ function Navbar() {
               </Typography>
             </Link>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-  <MenuItem key={page} onClick={handleCloseNavMenu}>
-    <Link to={`/${page.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-      <Typography textAlign="center">{page}</Typography>
-    </Link>
-  </MenuItem>
-))}
-             
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Link to={`/${page.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
+                </MenuItem>
+              ))}
             </Box>
           </Toolbar>
         </Container>
       </AppBar>
 
       <Routes>
-        <Route path="/our-rooms" element={< RoomList />} />
+        <Route path="/" element={<div>Home Page</div>} />
+        <Route path="/our-rooms" element={<RoomList />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/contact" element={<Contact />} />
