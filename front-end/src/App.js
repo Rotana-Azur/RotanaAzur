@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Footer from './Components/footer';
 import HomePage from './Components/HomePage.jsx';
-import CustomNavbar from './Components/NavBar.jsx';
+import Navbar from './Components/NavBar.jsx';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -13,11 +13,9 @@ const App = () => {
   return (
     
     <div>
-      <CustomNavbar onPageChange={handlePageChange} />
+      <Navbar onPageChange={handlePageChange} />
 
-      {/* Render the current page component */}
       {currentPage === 'home' && <HomePage />}
-      {/* Add other pages as needed */}
       
       <Footer />
     </div>
