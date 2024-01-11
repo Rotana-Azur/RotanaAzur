@@ -11,6 +11,7 @@ const App = () => {
   };
 
   return (
+    
     <div>
       <CustomNavbar onPageChange={handlePageChange} />
 
