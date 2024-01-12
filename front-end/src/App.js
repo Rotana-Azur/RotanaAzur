@@ -10,6 +10,7 @@ import Contact from './Components/contact.jsx'
 import Login from './Components/login.jsx'
 import SignUp from './Components/signUP.jsx';
 import Room from './Components/Room';
+import Reservation from './Components/Reservation.jsx';
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
           <Route path="/Sign-up" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/rooms/:id" element={<Room />} />
+          <Route path="/rooms/:id/reserve" element={<Reservation />} />
+
         </Routes>
         <Footer />
       </div>

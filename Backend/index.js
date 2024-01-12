@@ -5,7 +5,8 @@ import authRoute from "./routes/auth.js"
 import roomRoute from "./routes/rooms.js"
 import userRoute from "./routes/users.js"
 import cookieParser from "cookie-parser"
-import contactRoute from "./routes/contact.js"
+import contactRoute from "./routes/contact.js" 
+import resRoute from "./routes/reservation.js"
 import cors from 'cors';
 
 
@@ -28,6 +29,7 @@ app.use("/api/auth",authRoute)
 app.use("/api/rooms", roomRoute)
 app.use("/api/users",userRoute)
 app.use("/api/contacts", contactRoute);
+app.use("/api/reservations", resRoute);
 app.use(cookieParser())
 app.listen(8000, ()=> {
     connect()
