@@ -6,9 +6,10 @@ import Navbar from './Components/NavBar.jsx';
 import RoomList from './Components/allRooms'; 
 import AboutUs from './Components/aboutus.jsx'
 import Restaurant from './Components/Restaurant.jsx'
-import  Contact from './Components/contact.jsx'
+import Contact from './Components/contact.jsx'
 import Login from './Components/login.jsx'
-import SignUp from './Components/signUP.jsx'
+import SignUp from './Components/signUP.jsx';
+import Room from './Components/Room';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Sign-up" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/rooms/:id" element={<Room />} />
         </Routes>
         <Footer />
       </div>
