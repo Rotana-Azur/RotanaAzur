@@ -22,7 +22,7 @@ const HomePage = () => {
       sx={{
         textAlign: 'center',
         mt: 4,
-        color: '#fff',
+        color: '#1976D2', // Blue color
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -33,7 +33,7 @@ const HomePage = () => {
     >
       {/* First Section */}
       <Paper elevation={3} sx={{ padding: 3, marginBottom: 4, backgroundColor: 'transparent' }}>
-        <Typography variant="h4" component="h1" sx={{ marginBottom: 2 }}>
+        <Typography variant="h4" component="h1" sx={{ marginBottom: 2, fontFamily: 'Roboto Slab, serif' }}>
           Your Dream Stay Awaits
         </Typography>
         <Typography variant="subtitle1" sx={{ marginBottom: 4 }}>
@@ -46,7 +46,7 @@ const HomePage = () => {
 
       {/* Second Section */}
       <Paper elevation={3} sx={{ padding: 3, marginBottom: 4, backgroundColor: 'transparent' }}>
-        <Typography variant="h4" component="h2" sx={{ marginBottom: 2 }}>
+        <Typography variant="h4" component="h2" sx={{ marginBottom: 2, fontFamily: 'Roboto Slab, serif' }}>
           Explore Our Rooms
         </Typography>
         <Slider {...sliderSettings}>
@@ -69,7 +69,7 @@ const HomePage = () => {
 
       {/* Third Section */}
       <Paper elevation={3} sx={{ padding: 3, marginBottom: 4, backgroundColor: 'transparent' }}>
-        <Typography variant="h4" component="h2" sx={{ marginBottom: 2 }}>
+        <Typography variant="h4" component="h2" sx={{ marginBottom: 2, fontFamily: 'Roboto Slab, serif' }}>
           About Us
         </Typography>
         <Typography>

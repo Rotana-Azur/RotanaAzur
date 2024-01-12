@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Card, CardContent, Typography, Button, CardActions, Grid, CircularProgress } from '@mui/material';
 import RoomCard from './roomCard';
 
 const RoomList = () => {
@@ -19,14 +20,20 @@ const RoomList = () => {
     fetchRooms();
   }, []);
 
+  if (rooms.length === 0) {
+    return <CircularProgress />;
+  }
+
   return (
-    <div className="room-list">
+    <Grid container spacing={3} className="room-list">
       {rooms.map((room) => (
-        <Link key={room._id} to={`/rooms/${room._id}`}>
-          <RoomCard room={room} />
-        </Link>
+        <Grid item key={room._id} xs={12} sm={6} md={4}>
+          <Link to={`/rooms/${room._id}`} style={{ textDecoration: 'none' }}>
+            <RoomCard room={room} />
+          </Link>
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 };
 

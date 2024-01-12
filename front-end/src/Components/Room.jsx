@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import { Typography, Button, CircularProgress, Paper } from '@mui/material';
 
 const Room = () => {
   const { id } = useParams();
@@ -20,19 +21,25 @@ const Room = () => {
   }, [id]);
 
   if (!room) {
-    return <div>Loading...</div>;
+    return <CircularProgress />;
   }
 
   return (
-    <div className="room-details">
-      <h2>{room.name}</h2>
-      <img src={room.imageUrl} alt={room.title} style={{ maxWidth: '100%' }} />
-      <p>{room.description}</p>
+    <Paper elevation={3} className="room-details" style={{ padding: '16px', maxWidth: '600px', margin: 'auto' }}>
+      <Typography variant="h4" gutterBottom>
+        {room.name}
+      </Typography>
+      <img src={room.imageUrl} alt={room.title} style={{ maxWidth: '100%', marginBottom: '16px' }} />
+      <Typography variant="body1" paragraph>
+        {room.description}
+      </Typography>
 
-      <Link to={`/rooms/${id}/reserve`}>
-        <button>Reserve</button>
+      <Link to={`/rooms/${id}/reserve`} style={{ textDecoration: 'none' }}>
+        <Button variant="contained" color="primary">
+          Reserve
+        </Button>
       </Link>
-    </div>
+    </Paper>
   );
 };
 
