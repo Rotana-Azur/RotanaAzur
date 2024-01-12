@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import AdbIcon from '@mui/icons-material/Adb';
 import MenuItem from '@mui/material/MenuItem';
-
+import { FaHome, FaSignInAlt, FaUserPlus, FaSignOutAlt } from "react-icons/fa";
 import RoomList from './allRooms';
 import AboutUs from './aboutus';
 import Restaurant from './Restaurant';
