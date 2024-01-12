@@ -11,7 +11,6 @@ import Container from '@mui/material/Container';
 import AdbIcon from '@mui/icons-material/Adb';
 import MenuItem from '@mui/material/MenuItem';
 
-
 const pages = ['Our rooms', 'About us', 'Restaurant', 'Contact', 'Sign up', 'Login'];
 
 function Navbar() {
@@ -33,24 +32,11 @@ function Navbar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" padding="0">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-              }}
-            >
-              LOGO
-            </Typography>
+            <img src="/front-end/public/azur-hotel-high-resolution-logo-transparent-min.png" alt="Azur Hotel" style={{ width: '10px', height: '10px' }} />
           </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -104,7 +90,6 @@ function Navbar() {
                 letterSpacing: '.3rem',
               }}
             >
-              LOGO
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
