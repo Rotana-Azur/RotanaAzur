@@ -43,10 +43,6 @@ const SignUp = () => {
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
         <br />
-        <label>
-          Is Admin:
-          <input type="checkbox" checked={isAdmin} onChange={(e) => setIsAdmin(e.target.checked)} />
-        </label>
         <br />
         <button type="submit">Sign Up</button>
       </form>

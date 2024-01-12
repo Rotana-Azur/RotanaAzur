@@ -15,8 +15,10 @@ import RoomList from './allRooms';
 import AboutUs from './aboutus';
 import Restaurant from './Restaurant';
 import Contact from './contact';
-
-const pages = ['Home', 'Our rooms', 'About us', 'Restaurant', 'Contact'];
+import Home from './HomePage';
+import Login from './login';
+import SignUp from './signUP'
+const pages = ['Home', 'Our rooms', 'About us', 'Restaurant', 'Contact','Login','SignUp'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -122,11 +124,14 @@ function Navbar() {
       </AppBar>
 
       <Routes>
-        <Route path="/" element={<div>Home Page</div>} />
+        <Route path="/" element= {<Home />} />
+        <Route path="/Home" element= {<Home />} />
         <Route path="/our-rooms" element={<RoomList />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/restaurant" element={<Restaurant />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
       </Routes>
     </Router>
   );

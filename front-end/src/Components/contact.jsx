@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"
+import '../Components/styles/contact.css'
 const ContactForm = () => {
  const [formData, setFormData] = useState({
     username: "",

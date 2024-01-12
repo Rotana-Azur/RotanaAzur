@@ -4,9 +4,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+
 const HomePage = () => {
   const backgroundImageUrl =
-    'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+    'https://as1.ftcdn.net/v2/jpg/00/87/67/74/1000_F_87677449_Ia7kriWg3RTu8WKEDzkuNV2KMtfBeV1m.jpg';
 
     const sliderSettings = {
       dots: true,
@@ -54,14 +55,14 @@ const HomePage = () => {
         <Slider {...sliderSettings}>
           <div>
             <img
-              src="https://placekitten.com/300/200"
+              src=""
               alt="Room 1"
               style={{ width: '100%', borderRadius: '8px' }}
             />
           </div>
           <div>
             <img
-              src="https://placekitten.com/300/201"
+              src=""
               alt="Room 2"
               style={{ width: '100%', borderRadius: '8px' }}
             />

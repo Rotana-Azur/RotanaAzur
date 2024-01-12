@@ -15,7 +15,7 @@ const App = () => {
     <div>
       <Navbar onPageChange={handlePageChange} />
 
-      {currentPage === 'home' && <HomePage />}
+      {/* {currentPage === 'home' && <HomePage />} */}
       
       <Footer />
     </div>
